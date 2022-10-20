@@ -34,8 +34,8 @@ export default [
   "setPosition",
   "resetPosition",
   "setInitialPosition",
+  "setRotation",
   "setInitialRotation",
-
   "beginPath",
   "closePath",
   "fill",
