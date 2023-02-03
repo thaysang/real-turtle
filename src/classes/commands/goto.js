@@ -10,12 +10,15 @@ export default class MoveCommand extends Command {
   estimate(main) {
     return {
       requiredTime:
-        (1 - this.main.state.speed) * 5,
+        (1 - this.main.state.speed) * Math.abs(this.steps) * 5,
     };
   }
 
   prepare(main) {
-    
+    this.moveX = this.options.x - this.initialState.position.x 
+    this.moveY = this.options.y - this.initialState.position.y
+    this.steps = Math.sqrt(this.moveX**2 + this.moveY**2)
+    this.angle = 180*Math.atan2(this.moveY, this.moveX)/Math.PI;
   }
 
   async execute(progress, ctx) {
@@ -25,7 +28,7 @@ export default class MoveCommand extends Command {
         ctx.beginPath();
         ctx.moveTo(this.initialState.position.x, this.initialState.position.y);
       }
-
+      this.state.setRotation(this.angle)
       ctx.lineTo(this.options.x, this.options.y);
 
       if (this.state.strokeActive) {
