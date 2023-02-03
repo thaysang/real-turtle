@@ -1,6 +1,7 @@
 import Command from "../constructors/drawingCommand";
 
 export default class SetStrokeStyleCommand extends Command {
+  static aliases = ["pc"];
   static params = {
     style: new String(),
   };

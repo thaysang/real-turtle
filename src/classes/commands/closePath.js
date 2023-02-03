@@ -1,7 +1,7 @@
 import Command from "../constructors/drawingCommand";
 
 export default class ClosePathCommand extends Command {
-  static aliases = ["endFill"];
+  static aliases = ["ef"];
   static params = {};
 
   constructor(options) {
@@ -19,6 +19,11 @@ export default class ClosePathCommand extends Command {
   async execute(progress, ctx) {
     return new Promise((resolve) => {
       ctx.closePath();
+      if(this.state.fillStyle){
+        ctx.globalAlpha = 1;
+        ctx.fillStyle = this.state.fillStyle;
+        ctx.fill();
+      }
       this.state.setPathActive(false);
       resolve();
     });

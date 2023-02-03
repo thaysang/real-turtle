@@ -1,7 +1,7 @@
 import Command from "../constructors/drawingCommand";
 
 export default class BeginPathCommand extends Command {
-  static aliases = ["beginFill"];
+  static aliases = ["bf"];
   static params = {style: new String(),};
 
   constructor(options) {

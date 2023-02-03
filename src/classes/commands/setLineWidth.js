@@ -1,6 +1,8 @@
 import Command from "../constructors/drawingCommand";
 
 export default class SetLineWidthCommand extends Command {
+  static aliases = ["ps"];
+
   static params = {
     width: new Number(),
   };

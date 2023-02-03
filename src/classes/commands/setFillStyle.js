@@ -1,6 +1,7 @@
 import Command from "../constructors/drawingCommand";
 
 export default class SetFillStyleCommand extends Command {
+  static aliases = ["fc"];
   static params = {
     style: new String(),
   };
