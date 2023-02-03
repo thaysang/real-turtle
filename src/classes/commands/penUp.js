@@ -3,7 +3,7 @@ import Command from "../constructors/drawingCommand";
 export default class PenUpCommand extends Command {
   static params = {};
 
-  static aliases = ["up"];
+  static aliases = ["pu"];
 
   constructor(options) {
     super(options);
