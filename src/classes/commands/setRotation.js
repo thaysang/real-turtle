@@ -1,6 +1,7 @@
 import Command from "../constructors/drawingCommand";
 
 export default class SetRotationCommand extends Command {
+  static aliases = ["seth"];
   static params = {
     deg: new Number(),
   };

@@ -2,7 +2,7 @@ import Command from "../constructors/drawingCommand";
 
 export default class ResetPositionCommand extends Command {
   static params = {};
-
+  static aliases = ["home"];
   constructor(options) {
     super(options);
   }

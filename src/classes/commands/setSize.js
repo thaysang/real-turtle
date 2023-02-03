@@ -1,6 +1,7 @@
 import Command from "../constructors/drawingCommand";
 
 export default class SetSizeCommand extends Command {
+  static aliases = ["penSize"];
   static params = { size: new Number() };
   constructor(options) {
     super(options);

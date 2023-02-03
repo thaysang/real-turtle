@@ -1,6 +1,7 @@
 import Command from "../constructors/drawingCommand";
 
 export default class ClosePathCommand extends Command {
+  static aliases = ["endFill"];
   static params = {};
 
   constructor(options) {

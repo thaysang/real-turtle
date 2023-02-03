@@ -1,6 +1,7 @@
 import Command from "../constructors/drawingCommand";
 
 export default class SetSpeedCommand extends Command {
+  static aliases = ["speed"];
   static params = {
     speed: new Number(),
   };

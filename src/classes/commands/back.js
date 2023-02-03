@@ -3,7 +3,7 @@ import Command from "../constructors/drawingCommand";
 import MoveCommand from "./move";
 
 export default class BackCommand extends Command {
-  static aliases = ["bk"];
+  static aliases = ["bk","backward"];
 
   static params = { steps: new Number() };
 

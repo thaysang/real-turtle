@@ -1,6 +1,7 @@
 import Command from "../constructors/drawingCommand";
 
 export default class ArcCommand extends Command {
+  static aliases = ["circle"];
   static params = {
     radius: new Number(),
     angle: new Number(),
