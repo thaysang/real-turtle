@@ -15,8 +15,10 @@ export default class MoveCommand extends Command {
   }
 
   prepare(main) {
-    this.moveX = this.options.x - this.initialState.position.x 
-    this.moveY = this.options.y - this.initialState.position.y
+    this.xNow = this.options.x + this.initialState.position.x * (1 - progress);
+    this.yNow = this.options.y + this.initialState.position.y * (1 - progress);
+    this.moveX = this.xNow - this.initialState.position.x 
+    this.moveY = this.yNow - this.initialState.position.y
     this.steps = Math.sqrt(this.moveX**2 + this.moveY**2)
     this.angle = 180*Math.atan2(this.moveY, this.moveX)/Math.PI;
   }
@@ -29,7 +31,7 @@ export default class MoveCommand extends Command {
         ctx.moveTo(this.initialState.position.x, this.initialState.position.y);
       }
       this.state.setRotation(this.angle)
-      ctx.lineTo(this.options.x, this.options.y);
+      ctx.lineTo(this.xNow, this.yNow);
 
       if (this.state.strokeActive) {
         ctx.stroke();
@@ -39,7 +41,7 @@ export default class MoveCommand extends Command {
         ctx.closePath();
       }
 
-      this.state.setPosition(this.options.x, this.options.y);
+      this.state.setPosition(this.xNow, this.yNow);
       resolve();
     });
   }
