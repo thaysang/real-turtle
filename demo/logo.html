@@ -8,21 +8,21 @@
   <body>
     <script src="./build/index.js"></script>
     <canvas id="real-turtle"></canvas>
-  <script type="text/javascript" src="https://unpkg.com/real-turtle/build/helpers/simple.js"></script>
+  <script type="text/javascript" src="./build/helpers/simple.js"></script>
 
   <script type="text/javascript">
     //Your turtle code goes here
     turtle
     .bf("blue")
-    .speed(1)
+    .setSpeed(0.1)
     .ps(2)
     .pc("red")
     .setLineCap("round")
     .home()
-    .goto(200,200)
+    .fd(200)
     .goto(400,50)
+    .goto(200,100)
     .ef()
-    .fill()
   </script>
 
   </body>
