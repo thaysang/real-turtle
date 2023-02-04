@@ -16,18 +16,20 @@ export default class MoveCommand extends Command {
   }
 
   prepare(main) {
-
+    this.moveX = this.options.x - this.state.position.x 
+    this.moveY = this.options.y - this.state.position.y
   }
 
   async execute(progress, ctx) {
     return new Promise((resolve) => {
-      let moveX = this.options.x - this.state.position.x 
-      let moveY = this.options.y - this.state.position.y
-      this.state.setRotation(180*Math.atan2(moveY, moveX)/Math.PI - 90);
+      
       if (!this.state.pathActive) {
         ctx.beginPath();
         ctx.moveTo(this.initialState.position.x, this.initialState.position.y);
       }
+
+      this.state.setRotation(180*Math.atan2(this.moveY, this.moveX)/Math.PI+90);
+
       ctx.lineTo(this.options.x,this.options.y)
 
       if (this.state.strokeActive) {
