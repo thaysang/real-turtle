@@ -9,7 +9,7 @@ export default [
   "back",
 
   "arc",
-
+  "dot",
   "fillText",
   "strokeText",
   "fillCanvas",
