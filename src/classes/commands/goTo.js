@@ -1,6 +1,6 @@
 import Command from "../constructors/drawingCommand";
 
-export default class MoveCommand extends Command {
+export default class GoToCommand extends Command {
   static aliases = ["gt"];
   static params = { x: new Number(), y: new Number() };
   constructor(options) {
@@ -28,7 +28,7 @@ export default class MoveCommand extends Command {
         ctx.moveTo(this.initialState.position.x, this.initialState.position.y);
       }
 
-      this.state.setRotation(180*Math.atan2(this.moveY, this.moveX)/Math.PI+90);
+      // this.state.setRotation(180*Math.atan2(this.moveY, this.moveX)/Math.PI+90);
 
       ctx.lineTo(this.options.x,this.options.y)
 

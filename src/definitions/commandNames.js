@@ -1,7 +1,7 @@
 export default [
   "turn",
   "move",
-  "goto",
+  "goTo",
   "left",
   "right",
 
